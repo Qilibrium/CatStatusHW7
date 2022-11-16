@@ -19,7 +19,7 @@ public class HttpStatusImageDownloader {
             out.close();
 
         } catch (Exception ex) {
-            System.out.println(ex);
+            System.out.println(ex+"\n");
         }
 
     }
