@@ -18,7 +18,4 @@ public class HttpImageStatusCli {
             }
         }
     }
-    public static void main(String[] args) {
-        new HttpImageStatusCli().askStatus();
-    }
 }

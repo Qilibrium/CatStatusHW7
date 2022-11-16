@@ -15,6 +15,7 @@ public class HttpStatusImageDownloader {
             for (int i; (i = in.read()) != -1; ) {
                 out.write(i);
             }
+            System.out.println("Image with code "+code+" download");
             in.close();
             out.close();
 
