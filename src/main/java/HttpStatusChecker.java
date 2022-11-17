@@ -20,6 +20,6 @@ public class HttpStatusChecker {
         if (statusCode == 404) {
                 throw new Exception("\nThere is not image for HTTP status "+code);
         }
-        return String.valueOf(url);
+        return cat;
     }
 }
