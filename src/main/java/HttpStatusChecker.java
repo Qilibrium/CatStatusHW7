@@ -1,9 +1,11 @@
 import java.io.IOException;
+import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
 
 public class HttpStatusChecker {
+
 
     String getStatusImage(int code) throws IOException {
 
@@ -15,13 +17,14 @@ public class HttpStatusChecker {
         connection.connect();
         int statusCode = connection.getResponseCode();
 
-
         if (statusCode == 404) {
+
             try {
-                return "\nThere is not image for HTTP status " + code;
-            } catch (Exception ignored) {
+                throw new Exception("\nThere is not image for HTTP status "+code);
+            } catch (java.lang.Exception e) {
+                throw new RuntimeException(e);
             }
         }
-        return cat;
+        return String.valueOf(url);
     }
 }
