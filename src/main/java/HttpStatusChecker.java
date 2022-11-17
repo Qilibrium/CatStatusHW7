@@ -22,6 +22,6 @@ public class HttpStatusChecker {
             } catch (Exception ignored) {
             }
         }
-        return cat;
+        return String.valueOf(url);
     }
 }
