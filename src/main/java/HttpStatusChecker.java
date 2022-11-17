@@ -7,7 +7,7 @@ import java.net.URL;
 public class HttpStatusChecker {
 
 
-    String getStatusImage(int code) throws IOException {
+    String getStatusImage(int code) throws Exception {
 
         String cat = "https://http.cat/" + code + ".jpg";
         URL url = new URL(cat);
@@ -18,12 +18,7 @@ public class HttpStatusChecker {
         int statusCode = connection.getResponseCode();
 
         if (statusCode == 404) {
-
-            try {
                 throw new Exception("\nThere is not image for HTTP status "+code);
-            } catch (java.lang.Exception e) {
-                throw new RuntimeException(e);
-            }
         }
         return String.valueOf(url);
     }
